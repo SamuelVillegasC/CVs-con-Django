@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITS-Catálogo</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+</head>
+<body>
+
+  <header id="main-header">
+    <span class="logo-text">ITS - Information Technologies Solutions</span>
+    <nav id="main-nav">
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Catálogo de Servicios</h1>
+    <p class="page-sub">Lo que podemos hacer por ti</p>
+    {% load static %}
+    <div id="services-container">
+    </div>
+    <script> 
+      const serviciosData = [
+      {% for s in servicios %}
+      {"nombre":"{{ s.nombre }}", "descripcion": "{{ s.descripcion }}","precio": "{{ s.precio }}"},
+      {% endfor %}
+      ];
+    </script>
+    <script src="{% static 'script.js' %}"></script>
+  </main>
+
+  <footer id="main-footer">
+  </footer>
+
+</body>
+</html>

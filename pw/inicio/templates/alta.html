@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITS-Alta de Servicio</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+</head>
+<body>
+
+  <header id="main-header">
+    <span class="logo-text">ITS - Information Technologies Solutions</span>
+    <nav id="main-nav">
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Agregar Servicio</h1>
+    <p class="page-sub">Llena el formulario para registrar un nuevo servicio</p>
+    
+
+    <div id="form-error" class="form-error-box"></div>
+
+    <div id="form-container"> {% csrf_token %}
+    </div>
+  </main>
+
+  <footer id="main-footer">
+  </footer>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

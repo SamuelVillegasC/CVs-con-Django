@@ -1,0 +1,252 @@
+/* ===== VARIABLES ===== */
+:root {
+  --rojo: #e63232;
+  --rojo-oscuro: #a00;
+  --negro: #111;
+  --negro-suave: #222;
+  --gris: #555;
+  --gris-claro: #aaa;
+  --blanco: #f0f0f0;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--negro-suave);
+  border-bottom: 3px solid var(--rojo);
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--rojo);
+  letter-spacing: 1px;
+}
+
+#main-nav { display: flex; gap: 20px; }
+
+#main-nav a {
+  color: var(--gris-claro);
+  text-decoration: none;
+  font-size: 1.20rem;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+#main-nav a:hover,
+#main-nav a.activo {
+  color: var(--blanco);
+  border-bottom-color: var(--rojo);
+}
+
+main {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+
+.page-sub {
+  color: var(--gris-claro);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+#team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.team-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--negro-suave);
+  border-left: 4px solid var(--rojo);
+  padding: 70px 80px;
+}
+
+.team-foto {
+  width: 120px;
+  height: 120px;
+  background: var(--gris);
+  border: 2px solid var(--rojo-oscuro);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gris-claro);
+  font-size: 0.7rem;
+  text-align: center;
+  object-fit: cover;
+}
+
+.team-info h3 {
+  font-size: 2rem;
+  color: var(--blanco);
+  margin-bottom: 4px;
+}
+
+.team-info .rol {
+  font-size: 1.25rem;
+  color: var(--rojo);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-info p {
+  font-size: 1rem;
+  color: var(--gris-claro);
+}
+
+#services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--negro-suave);
+  padding: 30px 40px;
+  border-left: 4px solid var(--gris);
+}
+
+.service-card.premium {
+  border-left-color: var(--rojo);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+
+.service-card .descripcion {
+  font-size: 1rem;
+  color: var(--gris-claro);
+}
+
+.badge-premium {
+  display: inline-block;
+  font-size: 0.90rem;
+  background: var(--rojo-oscuro);
+  color: var(--blanco);
+  padding: 2px 8px;
+  margin-left: 8px;
+  border-radius: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#main-footer {
+  margin-top: 400px;
+  text-align: center;
+  padding: 18px;
+  border-top: 2px solid var(--negro-suave);
+  color: var(--gris);
+  font-size: 1rem;
+}
+
+#main-footer .accent { color: var(--rojo); }
+
+@media (max-width: 500px) {
+  .team-card { flex-direction: column; }
+  #main-nav { gap: 12px; }
+}
+/* ===== FORMULARIO DE ALTA ===== */
+#alta-form {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-grupo label {
+  font-size: 0.85rem;
+  color: var(--gris-claro);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-grupo input {
+  background: var(--negro-suave);
+  border: 1px solid var(--gris);
+  border-left: 3px solid var(--rojo-oscuro);
+  color: var(--blanco);
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-grupo input:focus {
+  border-color: var(--rojo);
+}
+
+.campo-error {
+  font-size: 0.78rem;
+  color: #ff6b6b;
+  min-height: 16px;
+}
+
+.form-error-box {
+  background: #3a0000;
+  border-left: 4px solid var(--rojo);
+  color: #ff9999;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+#btn-guardar {
+  margin-top: 6px;
+  padding: 12px 28px;
+  background: var(--rojo-oscuro);
+  color: var(--blanco);
+  border: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+#btn-guardar:hover {
+  background: var(--rojo);
+}
+
+.service-card .precio {
+  font-size: 0.9rem;
+  color: var(--gris-claro);
+  margin-top: 6px;
+}
